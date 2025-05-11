@@ -1,0 +1,28 @@
+{
+    "CONTROLS_IF_MSG_IF": "Ak",
+    "CONTROLS_IF_MSG_THEN": "Teda",
+    "CONTROLS_IF_MSG_ELSE": "Else",
+    "CONTROLS_IF_MSG_ELSEIF": "Else If",
+    "LOGIC_COMPARE_TOOLTIP_EQ": "Check if both inputs are equal.",
+    "LOGIC_COMPARE_TOOLTIP_NEQ": "Check if both inputs are not equal.",
+    "LOGIC_COMPARE_TOOLTIP_LT": "Check if the first input is less than the second.",
+    "LOGIC_COMPARE_TOOLTIP_LTE": "Check if the first input is less than or equal to the second.",
+    "LOGIC_COMPARE_TOOLTIP_GT": "Check if the first input is greater than the second.",
+    "LOGIC_COMPARE_TOOLTIP_GTE": "Check if the first input is greater than or equal to the second.",
+    "LOGIC_OPERATION_AND": "a",
+    "LOGIC_OPERATION_OR": "alebo",
+    "LOGIC_BOOLEAN_TRUE": "pravda",
+    "LOGIC_BOOLEAN_FALSE": "nepravda",
+    "LOGIC_NULL": "null",
+    "CONTROLS_WHILEUNTIL_INPUT_DO": "do",
+    "CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "pokial",
+    "CONTROLS_WHILEUNTIL_OPERATOR_UNTIL": "robiť",
+    "CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK": "prerušiť",
+    "CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE": "continue",
+    "CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK": "Exit the current loop.",
+    "CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE": "Skip the rest of this loop and continue with the next iteration.",
+    "CONTROLS_REPEAT_INPUT_DO": "do",
+    "CUSTOM_TOGGLE_LIGHT": "Toggle Light",
+    "CUSTOM_READ_SENSOR": "Read Sensor Value"
+  }
+  
