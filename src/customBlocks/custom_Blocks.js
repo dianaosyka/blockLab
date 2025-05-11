@@ -1,6 +1,54 @@
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
 
+const categoryColors = {
+  commands: "#e8be00",
+  logic: "#8c00ff",
+  loops: "#00ff26",
+  values: "#0ac4a2"
+};
+
+// Override default block colors to match your categories
+// First, store the original init method
+const originalIfInit = Blockly.Blocks['controls_if'].init;
+
+// Override the init to inject color
+Blockly.Blocks['controls_if'].init = function () {
+  originalIfInit.call(this);
+  this.setColour(categoryColors.logic);
+};
+const originalCompareInit = Blockly.Blocks['logic_compare'].init;
+Blockly.Blocks['logic_compare'].init = function () {
+  originalCompareInit.call(this);
+  this.setColour(categoryColors.logic);
+};
+
+const originalOperationInit = Blockly.Blocks['logic_operation'].init;
+Blockly.Blocks['logic_operation'].init = function () {
+  originalOperationInit.call(this);
+  this.setColour(categoryColors.logic);
+};
+
+const originalBooleanInit = Blockly.Blocks['logic_boolean'].init;
+Blockly.Blocks['logic_boolean'].init = function () {
+  originalBooleanInit.call(this);
+  this.setColour(categoryColors.logic);
+};
+
+const originalWhileInit = Blockly.Blocks['controls_whileUntil'].init;
+Blockly.Blocks['controls_whileUntil'].init = function () {
+  originalWhileInit.call(this);
+  this.setColour(categoryColors.loops);
+};
+
+const originalFlowInit = Blockly.Blocks['controls_flow_statements'].init;
+Blockly.Blocks['controls_flow_statements'].init = function () {
+  originalFlowInit.call(this);
+  this.setColour(categoryColors.loops);
+};
+
+
+//Define custom blocks
 Blockly.Blocks["wait_for"] = {
   init: function () {
     this.appendDummyInput()
@@ -12,7 +60,7 @@ Blockly.Blocks["wait_for"] = {
       .appendField("sekúnd");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(categoryColors.logic);
     this.setTooltip("Turns the light on or off.");
   },
 };
@@ -27,7 +75,7 @@ Blockly.Blocks["read_sensor"] = {
   init: function () {
     this.appendDummyInput().appendField("Read sensor value");
     this.setOutput(true, "Number");
-    this.setColour(160);
+    this.setColour(categoryColors.logic);
     this.setTooltip("Reads the value of a sensor.");
   },
 };
@@ -49,7 +97,7 @@ Blockly.Blocks["lights"] = {
       )
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(categoryColors.commands);
     this.setTooltip("Zapína biele svetlo alebo vypína svetlo");
   },
 };
@@ -84,7 +132,7 @@ Blockly.Blocks["lights-color"] = {
       )
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(categoryColors.commands);
     this.setTooltip("Nastaví farby svetla");
   },
 };
@@ -107,7 +155,7 @@ Blockly.Blocks["say"] = {
       )
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(categoryColors.commands);
     this.setTooltip("Hovorí vybrané slovo");
   },
 };
@@ -131,7 +179,7 @@ Blockly.Blocks["play"] = {
       )
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(categoryColors.commands);
     this.setTooltip("Prehrá vybraný zvuk");
   },
 };
@@ -151,7 +199,7 @@ Blockly.Blocks["declare_variable"] = {
       .appendField(new Blockly.FieldTextInput(""), "VALUE");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(195);
+    this.setColour(categoryColors.values);
     this.setTooltip("Deklaruje novú premennú s reťazcovou hodnotou.");
   },
 };
@@ -173,7 +221,7 @@ Blockly.Blocks["assign_variable"] = {
       .appendField(new Blockly.FieldTextInput("nazov"), "VAR");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(195);
+    this.setColour(categoryColors.values);
     this.setTooltip("Priradí novú hodnotu do existujúcej premennej.");
   },
 };
@@ -191,7 +239,7 @@ Blockly.Blocks["value_literal"] = {
       .appendField("Hodnota")
       .appendField(new Blockly.FieldTextInput(""), "LITERAL");
     this.setOutput(true, "String");
-    this.setColour(180);
+    this.setColour(categoryColors.values);
     this.setTooltip("Vracia hodnotu ako reťazec.");
   },
 };
@@ -208,7 +256,7 @@ Blockly.Blocks["get_variable"] = {
       .appendField("Hodnota premennej")
       .appendField(new Blockly.FieldTextInput("nazov"), "VAR_NAME");
     this.setOutput(true, "String");
-    this.setColour(180);
+    this.setColour(categoryColors.values);
     this.setTooltip("Získa aktuálnu hodnotu premennej");
   },
 };

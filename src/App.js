@@ -40,7 +40,7 @@ export default function App() {
       {
         kind: "category",
         name: "Prikazy",
-        colour: "#5CA699",
+        colour: "#e8be00",
         contents: [
           { kind: "block", type: "lights" },
           { kind: "block", type: "lights-color" },
@@ -51,26 +51,33 @@ export default function App() {
       {
         kind: "category",
         name: "Logika",
-        colour: "#5C81A6",
+        colour: "#8c00ff",
         contents: [
           { kind: "block", type: "controls_if" },
           { kind: "block", type: "logic_compare" },
           { kind: "block", type: "logic_operation" },
           { kind: "block", type: "logic_boolean" },
-          { kind: "block", type: "value_literal" },
-          { kind: "block", type: "get_variable" },
-          { kind: "block", type: "assign_variable" },
-          { kind: "block", type: "declare_variable" },
           { kind: "block", type: "wait_for" },
         ],
       },
       {
         kind: "category",
         name: "Cyklusy",
-        colour: "#5CA65C",
+        colour: "#00db07",
         contents: [
           { kind: "block", type: "controls_whileUntil" },
           { kind: "block", type: "controls_flow_statements" },
+        ],
+      },
+      {
+        kind: "category",
+        name: "Hodnoty",
+        colour: "#0ac4a2",
+        contents: [
+          { kind: "block", type: "value_literal" },
+          { kind: "block", type: "get_variable" },
+          { kind: "block", type: "assign_variable" },
+          { kind: "block", type: "declare_variable" },
         ],
       },
     ],
@@ -164,7 +171,7 @@ export default function App() {
       <div ref={blocklyDiv} style={{ height: "80%", width: "100%" }}></div>
       <button
         onClick={runProgram}
-        style={{ width: "60%", padding: "10px", fontSize: "16px", marginLeft: "20%" }}
+        style={{ width: "60%", padding: "10px", fontSize: "16px", marginLeft: "20%", backgroundColor: "green", color: "white" }}
         disabled={isRunning}
       >
         {isRunning ? "Running..." : "Run Program"}
