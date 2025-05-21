@@ -2,9 +2,8 @@
 const functions = require("./functions.js");
 (async () => {
   try {
-    let jablko = "sladke";
-if (jablka == "sladke") {
-  functions.lights("on");
+    while (true) {
+  functions.lights("off");
 }
 
     console.log("✅ Program finished execution!");

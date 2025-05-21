@@ -174,14 +174,14 @@ export default function App() {
         style={{ width: "60%", padding: "10px", fontSize: "16px", marginLeft: "20%", backgroundColor: "green", color: "white" }}
         disabled={isRunning}
       >
-        {isRunning ? "Running..." : "Run Program"}
+        {isRunning ? "Prebieha..." : "Spustiť program"}
       </button>
       <button
         onClick={stopProgram}
         style={{ width: "60%", padding: "10px", fontSize: "16px", marginLeft: "20%",marginTop: "7px", backgroundColor: "red", color: "white" }}
-        disabled={!isRunning} // ✅ Only enabled when a program is running
+        disabled={!isRunning}
       >
-        Stop Program
+        Zastaviť program
       </button>
     </div>
   );
