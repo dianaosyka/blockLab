@@ -171,7 +171,7 @@ export default function App() {
       <div ref={blocklyDiv} style={{ height: "80%", width: "100%" }}></div>
       <button
         onClick={runProgram}
-        style={{ width: "60%", padding: "10px", fontSize: "16px", marginLeft: "20%", backgroundColor: "green", color: "white" }}
+        style={{ width: "60%", padding: "10px", fontSize: "16px", marginLeft: "20%", backgroundColor: isRunning?"grey":"green", color: "white" }}
         disabled={isRunning}
       >
         {isRunning ? "Prebieha..." : "Spustiť program"}
